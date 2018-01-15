@@ -1,3 +1,83 @@
+-----------------------------------------50 Points Project -----------------------------------
+
+Team Members:
+Malvika Modi(SBU ID: 111483303)
+Shraddha Sharma(SBU ID: 111511484)
+Nikitha Kandru(SBU ID: 111492921)
+
+------------------------------------------ Features -------------------------------------------
+
+1. Warm up:: Kernel printf, Timer, Keyboard, IDT, handlers
+2. Physical Memory, Virtual Memory, Mapping
+3. 4-Level Paging, CR3 setup
+4. Ring 0 to Ring 3 switch
+5. Tarfs and Elf Loading
+6. Auto grow stack
+8. Shell with "cd","ls", "echo", "pwd", "cat"
+9. Script handling with #!. 
+10. Run qemu which starts sbush directly
+----------------------------------------- Memory Mapping ------------------------------------
+
+			PHYSICAL	VIRTUAL
+			========	========
+
+physbase		0x200000	0xffffffff80200000
+
+
+VIDEO_BUFFER	        0xb8000		0xFFFFFFFF800B8000	
+
+STACK_START 0xFFFF0000
+STACK_MAX_SIZE 40960
+
+HEAP_START 0x08000000
+HEAP_END 0x40000000
+
+
+Features Supported on Shell:
+============================
+1.  cd                : change the current working directory
+2.  clear	          : to clear the screen
+3.  echo 	          : prints the input given
+4.  ls                : list the contents in current directory
+5. pwd               : prints current working directory
+6. cat               : prints the content of file
+7. sh                : runs the script provided as input having shebang(!#)
+
+Syscall supported:
+=================
+1. open
+2. read
+3. write
+4. close
+5. opendir
+6. readdir
+7.closedir
+8.getcwd
+9.getpid
+10.getppid
+11.fork(returns pid)
+12.exit
+13.chdir
+14.clear
+
+
+--------------------------------- References ---------------------------------
+
+1. BrokenThorn
+2. Osdevwiki and Forum
+3. Gustavo Duarte
+4. Bran(OSDEVER)
+5. JamesM's kernel development tutorials 
+6. AMD64 Architecture Programmer's Manual Volume 2: System Programming
+
+Reference OS (x64):
+1. HelenOS-0.5.0
+2. Shovelos
+
+
+
+
+
 * The provided Makefile:
   1) builds a kernel
   2) copies it into rootfs/boot/kernel/kernel

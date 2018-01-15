@@ -1,6 +1,8 @@
 #ifndef _TARFS_H
 #define _TARFS_H
 
+#include <sys/defs.h>
+
 extern char _binary_tarfs_start;
 extern char _binary_tarfs_end;
 
@@ -23,5 +25,18 @@ struct posix_header_ustar {
   char prefix[155];
   char pad[12];
 };
+
+
+//tarfs struct
+typedef struct {
+	char name[100];
+	int size;
+	int flagType;
+	uint64_t headerAddress;
+	int par;	
+} tarfsStruct;
+
+extern tarfsStruct tarfs_fs[100];
+void tarfs_init();
 
 #endif

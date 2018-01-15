@@ -40,4 +40,6 @@ typedef struct {
   Elf64_Xword   p_align;
 } Elf64_Phdr;
 
+vma* createvma(taskStruct*);
+int load_binaries(char *filename, taskStruct *current);
 #endif
